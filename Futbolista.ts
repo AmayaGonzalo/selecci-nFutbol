@@ -1,9 +1,9 @@
 import {Persona} from "./Persona"
 export class Futbolista extends Persona {
     private numeroCamiseta: number;
-    estadoActual: boolean;
-    fechaJuego: number;
-    mesJuego: number;
+    private estadoActual: boolean;
+    private fechaJuego: number;
+    private mesJuego: number;
 
  constructor (pNombre: string, pApellido: string, pEdad:number, pNumeroCamiseta: number, pFechaJuego: number, pMesJuego: number) {
     super (pNombre, pApellido, pEdad);
