@@ -19,21 +19,31 @@ exports.Masajista = void 0;
 var Persona_1 = require("./Persona");
 var Masajista = /** @class */ (function (_super) {
     __extends(Masajista, _super);
-    function Masajista(pNombre, pApellido, pEdad, pListaJugadorAsignado) {
-        var _this = _super.call(this, pNombre, pApellido, pEdad) || this;
+    function Masajista(pNombre, pApellido, pEdad, pEstado, pListaJugadorAsignado) {
+        var _this = _super.call(this, pNombre, pApellido, pEdad, pEstado) || this;
         _this.ListaJugadorAsiganado = pListaJugadorAsignado;
         return _this;
     }
-    Masajista.prototype.AsignarJugador = function (pNombre) {
+    Masajista.prototype.asignarJugador = function (pNombre) {
         this.ListaJugadorAsiganado.push(pNombre);
         console.log("Se le asigno el jugador: ", pNombre);
     };
-    Masajista.prototype.BajaJugador = function (pNombre) {
+    Masajista.prototype.bajaJugador = function (pNombre) {
         for (var i = 0; i < this.ListaJugadorAsiganado.length; i++) {
-            if (pNombre.getApellido() == this.ListaJugadorAsiganado[i].getApellido()) {
+            if (pNombre.getApellido() === this.ListaJugadorAsiganado[i].getApellido()) {
                 this.ListaJugadorAsiganado.splice(i, 1);
                 console.log("El jugador: ", pNombre.getNombre(), " se lo ha dado de baja.");
             }
+        }
+    };
+    Masajista.prototype.descansar = function () {
+        if (this.estado) {
+            this.estado = false;
+            console.log("el personal se encuentra en descanso");
+        }
+        else {
+            this.estado = true;
+            console.log("El personal se encuentra ejerciendo");
         }
     };
     return Masajista;

@@ -2,10 +2,11 @@
 exports.__esModule = true;
 exports.Persona = void 0;
 var Persona = /** @class */ (function () {
-    function Persona(pNombre, pApellido, pEdad) {
+    function Persona(pNombre, pApellido, pEdad, pEstado) {
         this.nombre = pNombre;
         this.apellido = pApellido;
         this.edad = pEdad;
+        this.estado = pEstado;
     }
     Persona.prototype.getNombre = function () {
         return this.nombre;

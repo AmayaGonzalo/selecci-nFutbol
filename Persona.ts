@@ -1,13 +1,16 @@
+import { Futbolista } from "./Futbolista";
 
-export class Persona {
+export abstract class Persona {
     protected nombre: string;
     protected apellido: string;
     protected edad: number;
+    protected estado: boolean;
 
- constructor (pNombre: string, pApellido: string, pEdad: number){
+ constructor (pNombre: string, pApellido: string, pEdad: number, pEstado: boolean){
     this.nombre = pNombre;
     this.apellido = pApellido;
     this.edad = pEdad;
+    this.estado = pEstado;
     }
     getNombre(): string {
         return this.nombre
@@ -28,4 +31,5 @@ export class Persona {
     setEdad(pEdad: number): void {
         this.edad = pEdad;
     }
-}
+    abstract descansar (): void;
+    }

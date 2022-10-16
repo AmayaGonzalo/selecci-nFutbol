@@ -19,8 +19,8 @@ exports.Futbolista = void 0;
 var Persona_1 = require("./Persona");
 var Futbolista = /** @class */ (function (_super) {
     __extends(Futbolista, _super);
-    function Futbolista(pNombre, pApellido, pEdad, pNumeroCamiseta, pFechaJuego, pMesJuego) {
-        var _this = _super.call(this, pNombre, pApellido, pEdad) || this;
+    function Futbolista(pNombre, pApellido, pEdad, pEstado, pNumeroCamiseta, pFechaJuego, pMesJuego) {
+        var _this = _super.call(this, pNombre, pApellido, pEdad, pEstado) || this;
         _this.numeroCamiseta = pNumeroCamiseta;
         _this.fechaJuego = pFechaJuego;
         _this.mesJuego = pMesJuego;
@@ -34,7 +34,15 @@ var Futbolista = /** @class */ (function (_super) {
             console.log("El jugador ya es titular");
         }
     };
-    Futbolista.prototype.entrenar = function (pApellido, pfecha) {
+    Futbolista.prototype.descansar = function () {
+        if (this.estado) {
+            this.estado = false;
+            console.log("el personal se encuentra en descanso");
+        }
+        else {
+            this.estado = true;
+            console.log("El personal se encuentra ejerciendo");
+        }
     };
     return Futbolista;
 }(Persona_1.Persona));

@@ -5,8 +5,8 @@ import { Masajista } from "./Masajista";
 export class Entrenador extends Persona {
     private listaTitulares: Futbolista[];
 
-    constructor(pNombre: string, pApellido: string, pEdad: number, pListaTitulares: Futbolista[]) {
-        super(pNombre, pApellido, pEdad)
+    constructor(pNombre: string, pApellido: string, pEdad: number, pEstado: boolean, pListaTitulares: Futbolista[]) {
+        super(pNombre, pApellido, pEdad, pEstado)
         this.listaTitulares = pListaTitulares;        
     }
 
@@ -21,5 +21,14 @@ export class Entrenador extends Persona {
                 console.log ("El jugador ", pJugador.getNombre(), " ", pJugador.getApellido(), " quedo en lista de suplentes.");
             }
         }
-    } 
+    }
+    descansar(): void {
+        if (this.estado){
+            this.estado = false;
+            console.log ("el personal se encuentra en descanso")
+        }else {
+            this.estado = true;
+            console.log ("El personal se encuentra ejerciendo")
+        }
+    }
 }

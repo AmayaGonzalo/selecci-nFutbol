@@ -19,8 +19,8 @@ exports.Entrenador = void 0;
 var Persona_1 = require("./Persona");
 var Entrenador = /** @class */ (function (_super) {
     __extends(Entrenador, _super);
-    function Entrenador(pNombre, pApellido, pEdad, pListaTitulares) {
-        var _this = _super.call(this, pNombre, pApellido, pEdad) || this;
+    function Entrenador(pNombre, pApellido, pEdad, pEstado, pListaTitulares) {
+        var _this = _super.call(this, pNombre, pApellido, pEdad, pEstado) || this;
         _this.listaTitulares = pListaTitulares;
         return _this;
     }
@@ -34,6 +34,16 @@ var Entrenador = /** @class */ (function (_super) {
                 this.listaTitulares.splice(i, 1);
                 console.log("El jugador ", pJugador.getNombre(), " ", pJugador.getApellido(), " quedo en lista de suplentes.");
             }
+        }
+    };
+    Entrenador.prototype.descansar = function () {
+        if (this.estado) {
+            this.estado = false;
+            console.log("el personal se encuentra en descanso");
+        }
+        else {
+            this.estado = true;
+            console.log("El personal se encuentra ejerciendo");
         }
     };
     return Entrenador;
