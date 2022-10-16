@@ -2,23 +2,23 @@ import { Persona } from "./Persona";
 import { Futbolista } from "./Futbolista";
 import { Masajista } from "./Masajista";
 
-export class Entrenador extends Persona{
-    private plantel: Futbolista[];
+export class Entrenador extends Persona {
+    private listaTitulares: Futbolista[];
 
-    constructor(pNombre: string, pApellido: string, pEdad: number, pPlantel: Futbolista[]) {
+    constructor(pNombre: string, pApellido: string, pEdad: number, pListaTitulares: Futbolista[]) {
         super(pNombre, pApellido, pEdad)
-        this.plantel = pPlantel;        
+        this.listaTitulares = pListaTitulares;        
     }
 
-    titularizar (pNombre: Futbolista): void {
-        this.plantel.push(pNombre);
-        console.log(pNombre," queddo como titular en el equipo.");
+    titularizar (pJugador: Futbolista): void {
+        this.listaTitulares.push(pJugador);
+        console.log(pJugador," quedo como titular en el equipo.");
     }
-    sacarListaDeTitulares(pNombre: Futbolista): void {
-        for (let i: number = 0; this.plantel.length; i ++){
-            if (pNombre.getApellido() == this.plantel[i].getApellido()) {
-                this.plantel.splice(i, 1);
-                console.log ("El jugador ", pNombre.getApellido()," quedo en lista de suplentes.");
+    sacarDeListaDeTitulares(pJugador: Futbolista): void {
+        for (let i: number = 0; i < this.listaTitulares.length; i ++){
+            if (pJugador.getApellido() === this.listaTitulares[i].getApellido()) {
+                this.listaTitulares.splice(i, 1);
+                console.log ("El jugador ", pJugador.getNombre(), " ", pJugador.getApellido(), " quedo en lista de suplentes.");
             }
         }
     } 
