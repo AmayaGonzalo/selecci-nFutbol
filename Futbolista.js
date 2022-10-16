@@ -19,21 +19,11 @@ exports.Futbolista = void 0;
 var Persona_1 = require("./Persona");
 var Futbolista = /** @class */ (function (_super) {
     __extends(Futbolista, _super);
-    function Futbolista(pNombre, pApellido, pEdad, pEstado, pNumeroCamiseta, pFechaJuego, pMesJuego) {
+    function Futbolista(pNombre, pApellido, pEdad, pEstado, pNumeroCamiseta) {
         var _this = _super.call(this, pNombre, pApellido, pEdad, pEstado) || this;
         _this.numeroCamiseta = pNumeroCamiseta;
-        _this.fechaJuego = pFechaJuego;
-        _this.mesJuego = pMesJuego;
         return _this;
     }
-    Futbolista.prototype.titularizar = function () {
-        if (this.estadoActual == false) {
-            this.estadoActual = true;
-        }
-        else {
-            console.log("El jugador ya es titular");
-        }
-    };
     Futbolista.prototype.descansar = function () {
         if (this.estado) {
             this.estado = false;
