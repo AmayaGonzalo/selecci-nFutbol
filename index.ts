@@ -21,4 +21,4 @@ console.log (entrenadorUno);
 console.log (futbolistaUno);
 console.log (masajistaUno);
 
-entrenadorUno.descansar
+entrenadorUno.descansar()

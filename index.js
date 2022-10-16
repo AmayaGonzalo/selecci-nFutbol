@@ -15,4 +15,4 @@ entrenadorUno.sacarDeListaDeTitulares(futbolistaTres); //Se espera el resultado 
 console.log(entrenadorUno);
 console.log(futbolistaUno);
 console.log(masajistaUno);
-entrenadorUno.descansar;
+entrenadorUno.descansar();
