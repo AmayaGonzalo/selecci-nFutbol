@@ -21,18 +21,18 @@ var Masajista = /** @class */ (function (_super) {
     __extends(Masajista, _super);
     function Masajista(pNombre, pApellido, pEdad, pEstado, pListaJugadorAsignado) {
         var _this = _super.call(this, pNombre, pApellido, pEdad, pEstado) || this;
-        _this.ListaJugadorAsiganado = pListaJugadorAsignado;
+        _this.listaJugadorAsiganado = pListaJugadorAsignado;
         return _this;
     }
-    Masajista.prototype.asignarJugador = function (pNombre) {
-        this.ListaJugadorAsiganado.push(pNombre);
-        console.log("Se le asigno el jugador: ", pNombre);
+    Masajista.prototype.asignarJugador = function (pFutbolista) {
+        this.listaJugadorAsiganado.push(pFutbolista);
+        console.log("Se le asigno el jugador: ", pFutbolista);
     };
-    Masajista.prototype.bajaJugador = function (pNombre) {
-        for (var i = 0; i < this.ListaJugadorAsiganado.length; i++) {
-            if (pNombre.getApellido() === this.ListaJugadorAsiganado[i].getApellido()) {
-                this.ListaJugadorAsiganado.splice(i, 1);
-                console.log("El jugador: ", pNombre.getNombre(), " se lo ha dado de baja.");
+    Masajista.prototype.bajaJugador = function (pFutbolista) {
+        for (var i = 0; i < this.listaJugadorAsiganado.length; i++) {
+            if (pFutbolista.getApellido() === this.listaJugadorAsiganado[i].getApellido()) {
+                this.listaJugadorAsiganado.splice(i, 1);
+                console.log("El jugador: ", pFutbolista.getNombre(), " se lo ha dado de baja.");
             }
         }
     };
